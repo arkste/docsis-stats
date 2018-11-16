@@ -1,51 +1,59 @@
 #!/bin/bash
 
-BASE_DIR=/home/pi/dvb
+BASE_DIR=/home/pi/docsis-stats
 TIMES="end-1d end-1w end-4w end-1y"
 
 for i in $TIMES; do
     rrdtool graph ${BASE_DIR}/images/combined-$i.png \
-    --title="21337 Lüneburg | All Channels | $i" \
+    --title="28000 Bremen | All Channels | $i" \
     --vertical-label='Bits per second' \
     -W "$(date '+%F %T %Z')" \
     --start $i \
     --slope-mode \
     -w 500 -h 250 \
-    -l 0 -u 1167936000 \
+    -l 0 -u 1529440000 \
     --color BACK#ededed \
     --color ARROW#000000 \
-    DEF:b546min=${BASE_DIR}/546000000.rrd:bandwidth:MIN \
-    DEF:b546avg=${BASE_DIR}/546000000.rrd:bandwidth:AVERAGE \
-    DEF:b546max=${BASE_DIR}/546000000.rrd:bandwidth:MAX \
-    DEF:b546last=${BASE_DIR}/546000000.rrd:bandwidth:LAST \
-    DEF:b554min=${BASE_DIR}/554000000.rrd:bandwidth:MIN \
-    DEF:b554avg=${BASE_DIR}/554000000.rrd:bandwidth:AVERAGE \
-    DEF:b554max=${BASE_DIR}/554000000.rrd:bandwidth:MAX \
-    DEF:b554last=${BASE_DIR}/554000000.rrd:bandwidth:LAST \
-    DEF:b562min=${BASE_DIR}/562000000.rrd:bandwidth:MIN \
-    DEF:b562avg=${BASE_DIR}/562000000.rrd:bandwidth:AVERAGE \
-    DEF:b562max=${BASE_DIR}/562000000.rrd:bandwidth:MAX \
-    DEF:b562last=${BASE_DIR}/562000000.rrd:bandwidth:LAST \
-    DEF:b570min=${BASE_DIR}/570000000.rrd:bandwidth:MIN \
-    DEF:b570avg=${BASE_DIR}/570000000.rrd:bandwidth:AVERAGE \
-    DEF:b570max=${BASE_DIR}/570000000.rrd:bandwidth:MAX \
-    DEF:b570last=${BASE_DIR}/570000000.rrd:bandwidth:LAST \
-    DEF:b578min=${BASE_DIR}/578000000.rrd:bandwidth:MIN \
-    DEF:b578avg=${BASE_DIR}/578000000.rrd:bandwidth:AVERAGE \
-    DEF:b578max=${BASE_DIR}/578000000.rrd:bandwidth:MAX \
-    DEF:b578last=${BASE_DIR}/578000000.rrd:bandwidth:LAST \
-    DEF:b586min=${BASE_DIR}/586000000.rrd:bandwidth:MIN \
-    DEF:b586avg=${BASE_DIR}/586000000.rrd:bandwidth:AVERAGE \
-    DEF:b586max=${BASE_DIR}/586000000.rrd:bandwidth:MAX \
-    DEF:b586last=${BASE_DIR}/586000000.rrd:bandwidth:LAST \
-    DEF:b594min=${BASE_DIR}/594000000.rrd:bandwidth:MIN \
-    DEF:b594avg=${BASE_DIR}/594000000.rrd:bandwidth:AVERAGE \
-    DEF:b594max=${BASE_DIR}/594000000.rrd:bandwidth:MAX \
-    DEF:b594last=${BASE_DIR}/594000000.rrd:bandwidth:LAST \
+    DEF:b138min=${BASE_DIR}/138000000.rrd:bandwidth:MIN \
+    DEF:b138avg=${BASE_DIR}/138000000.rrd:bandwidth:AVERAGE \
+    DEF:b138max=${BASE_DIR}/138000000.rrd:bandwidth:MAX \
+    DEF:b138last=${BASE_DIR}/138000000.rrd:bandwidth:LAST \
+    DEF:b146min=${BASE_DIR}/146000000.rrd:bandwidth:MIN \
+    DEF:b146avg=${BASE_DIR}/146000000.rrd:bandwidth:AVERAGE \
+    DEF:b146max=${BASE_DIR}/146000000.rrd:bandwidth:MAX \
+    DEF:b146last=${BASE_DIR}/146000000.rrd:bandwidth:LAST \
+    DEF:b154min=${BASE_DIR}/154000000.rrd:bandwidth:MIN \
+    DEF:b154avg=${BASE_DIR}/154000000.rrd:bandwidth:AVERAGE \
+    DEF:b154max=${BASE_DIR}/154000000.rrd:bandwidth:MAX \
+    DEF:b154last=${BASE_DIR}/154000000.rrd:bandwidth:LAST \
+    DEF:b162min=${BASE_DIR}/162000000.rrd:bandwidth:MIN \
+    DEF:b162avg=${BASE_DIR}/162000000.rrd:bandwidth:AVERAGE \
+    DEF:b162max=${BASE_DIR}/162000000.rrd:bandwidth:MAX \
+    DEF:b162last=${BASE_DIR}/162000000.rrd:bandwidth:LAST \
     DEF:b602min=${BASE_DIR}/602000000.rrd:bandwidth:MIN \
     DEF:b602avg=${BASE_DIR}/602000000.rrd:bandwidth:AVERAGE \
     DEF:b602max=${BASE_DIR}/602000000.rrd:bandwidth:MAX \
     DEF:b602last=${BASE_DIR}/602000000.rrd:bandwidth:LAST \
+    DEF:b618min=${BASE_DIR}/618000000.rrd:bandwidth:MIN \
+    DEF:b618avg=${BASE_DIR}/618000000.rrd:bandwidth:AVERAGE \
+    DEF:b618max=${BASE_DIR}/618000000.rrd:bandwidth:MAX \
+    DEF:b618last=${BASE_DIR}/618000000.rrd:bandwidth:LAST \
+    DEF:b626min=${BASE_DIR}/626000000.rrd:bandwidth:MIN \
+    DEF:b626avg=${BASE_DIR}/626000000.rrd:bandwidth:AVERAGE \
+    DEF:b626max=${BASE_DIR}/626000000.rrd:bandwidth:MAX \
+    DEF:b626last=${BASE_DIR}/626000000.rrd:bandwidth:LAST \
+    DEF:b642min=${BASE_DIR}/642000000.rrd:bandwidth:MIN \
+    DEF:b642avg=${BASE_DIR}/642000000.rrd:bandwidth:AVERAGE \
+    DEF:b642max=${BASE_DIR}/642000000.rrd:bandwidth:MAX \
+    DEF:b642last=${BASE_DIR}/642000000.rrd:bandwidth:LAST \
+    DEF:b650min=${BASE_DIR}/650000000.rrd:bandwidth:MIN \
+    DEF:b650avg=${BASE_DIR}/650000000.rrd:bandwidth:AVERAGE \
+    DEF:b650max=${BASE_DIR}/650000000.rrd:bandwidth:MAX \
+    DEF:b650last=${BASE_DIR}/650000000.rrd:bandwidth:LAST \
+    DEF:b658min=${BASE_DIR}/658000000.rrd:bandwidth:MIN \
+    DEF:b658avg=${BASE_DIR}/658000000.rrd:bandwidth:AVERAGE \
+    DEF:b658max=${BASE_DIR}/658000000.rrd:bandwidth:MAX \
+    DEF:b658last=${BASE_DIR}/658000000.rrd:bandwidth:LAST \
     DEF:b666min=${BASE_DIR}/666000000.rrd:bandwidth:MIN \
     DEF:b666avg=${BASE_DIR}/666000000.rrd:bandwidth:AVERAGE \
     DEF:b666max=${BASE_DIR}/666000000.rrd:bandwidth:MAX \
@@ -78,6 +86,22 @@ for i in $TIMES; do
     DEF:b722avg=${BASE_DIR}/722000000.rrd:bandwidth:AVERAGE \
     DEF:b722max=${BASE_DIR}/722000000.rrd:bandwidth:MAX \
     DEF:b722last=${BASE_DIR}/722000000.rrd:bandwidth:LAST \
+    DEF:b730min=${BASE_DIR}/730000000.rrd:bandwidth:MIN \
+    DEF:b730avg=${BASE_DIR}/730000000.rrd:bandwidth:AVERAGE \
+    DEF:b730max=${BASE_DIR}/730000000.rrd:bandwidth:MAX \
+    DEF:b730last=${BASE_DIR}/730000000.rrd:bandwidth:LAST \
+    DEF:b738min=${BASE_DIR}/738000000.rrd:bandwidth:MIN \
+    DEF:b738avg=${BASE_DIR}/738000000.rrd:bandwidth:AVERAGE \
+    DEF:b738max=${BASE_DIR}/738000000.rrd:bandwidth:MAX \
+    DEF:b738last=${BASE_DIR}/738000000.rrd:bandwidth:LAST \
+    DEF:b746min=${BASE_DIR}/746000000.rrd:bandwidth:MIN \
+    DEF:b746avg=${BASE_DIR}/746000000.rrd:bandwidth:AVERAGE \
+    DEF:b746max=${BASE_DIR}/746000000.rrd:bandwidth:MAX \
+    DEF:b746last=${BASE_DIR}/746000000.rrd:bandwidth:LAST \
+    DEF:b754min=${BASE_DIR}/754000000.rrd:bandwidth:MIN \
+    DEF:b754avg=${BASE_DIR}/754000000.rrd:bandwidth:AVERAGE \
+    DEF:b754max=${BASE_DIR}/754000000.rrd:bandwidth:MAX \
+    DEF:b754last=${BASE_DIR}/754000000.rrd:bandwidth:LAST \
     DEF:b762min=${BASE_DIR}/762000000.rrd:bandwidth:MIN \
     DEF:b762avg=${BASE_DIR}/762000000.rrd:bandwidth:AVERAGE \
     DEF:b762max=${BASE_DIR}/762000000.rrd:bandwidth:MAX \
@@ -110,137 +134,185 @@ for i in $TIMES; do
     DEF:b818avg=${BASE_DIR}/818000000.rrd:bandwidth:AVERAGE \
     DEF:b818max=${BASE_DIR}/818000000.rrd:bandwidth:MAX \
     DEF:b818last=${BASE_DIR}/818000000.rrd:bandwidth:LAST \
-    CDEF:bmin=b546min,b554min,b562min,b570min,b578min,b586min,b594min,b602min,b666min,b674min,b682min,b690min,b698min,b706min,b714min,b722min,b762min,b770min,b778min,b786min,b794min,b802min,b810min,b818min,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
-    CDEF:bavg=b546avg,b554avg,b562avg,b570avg,b578avg,b586avg,b594avg,b602avg,b666avg,b674avg,b682avg,b690avg,b698avg,b706avg,b714avg,b722avg,b762avg,b770avg,b778avg,b786avg,b794avg,b802avg,b810avg,b818avg,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
-    CDEF:bmax=b546max,b554max,b562max,b570max,b578max,b586max,b594max,b602max,b666max,b674max,b682max,b690max,b698max,b706max,b714max,b722max,b762max,b770max,b778max,b786max,b794max,b802max,b810max,b818max,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
-    CDEF:blast=b546last,b554last,b562last,b570last,b578last,b586last,b594last,b602last,b666last,b674last,b682last,b690last,b698last,b706last,b714last,b722last,b762last,b770last,b778last,b786last,b794last,b802last,b810last,b818last,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
-    AREA:1167936000#D7E4CE \
+    DEF:b826min=${BASE_DIR}/826000000.rrd:bandwidth:MIN \
+    DEF:b826avg=${BASE_DIR}/826000000.rrd:bandwidth:AVERAGE \
+    DEF:b826max=${BASE_DIR}/826000000.rrd:bandwidth:MAX \
+    DEF:b826last=${BASE_DIR}/826000000.rrd:bandwidth:LAST \
+    DEF:b834min=${BASE_DIR}/834000000.rrd:bandwidth:MIN \
+    DEF:b834avg=${BASE_DIR}/834000000.rrd:bandwidth:AVERAGE \
+    DEF:b834max=${BASE_DIR}/834000000.rrd:bandwidth:MAX \
+    DEF:b834last=${BASE_DIR}/834000000.rrd:bandwidth:LAST \
+    CDEF:bmin=b138min,b146min,b154min,b162min,b602min,b618min,b626min,b642min,b650min,b658min,b666min,b674min,b682min,b690min,b698min,b706min,b714min,b722min,b730min,b738min,b746min,b754min,b762min,b770min,b778min,b786min,b794min,b802min,b810min,b818min,b826min,b834min,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
+    CDEF:bavg=b138avg,b146avg,b154avg,b162avg,b602avg,b618avg,b626avg,b642avg,b650avg,b658avg,b666avg,b674avg,b682avg,b690avg,b698avg,b706avg,b714avg,b722avg,b730avg,b738avg,b746avg,b754avg,b762avg,b770avg,b778avg,b786avg,b794avg,b802avg,b810avg,b818avg,b826avg,b834avg,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
+    CDEF:bmax=b138max,b146max,b154max,b162max,b602max,b618max,b626max,b642max,b650max,b658max,b666max,b674max,b682max,b690max,b698max,b706max,b714max,b722max,b730max,b738max,b746max,b754max,b762max,b770max,b778max,b786max,b794max,b802max,b810max,b818max,b826max,b834max,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
+    CDEF:blast=b138last,b146last,b154last,b162last,b602last,b618last,b626last,b642last,b650last,b658last,b666last,b674last,b682last,b690last,b698last,b706last,b714last,b722last,b730last,b738last,b746last,b754last,b762last,b770last,b778last,b786last,b794last,b802last,b810last,b818last,b826last,b834last,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN,ADDNAN \
+    AREA:1529440000#D7E4CE \
     STACK:55040000#FEE4E4 \
     COMMENT:"Separate Channel Statistics\n" \
     COMMENT:" \n" \
-    COMMENT:"QAM 256 (Σ 667.392 Mbit/s)\n" \
-    AREA:b546avg#FF0000:'546 MHz      ' \
-    GPRINT:b546avg:AVERAGE:"Avg %5.2lf %s   " \
-    GPRINT:b546min:MIN:"Min %5.2lf %s   " \
-    GPRINT:b546max:MAX:"Max %5.2lf %s" \
-    GPRINT:b546last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b554avg#FF4000:'554 MHz      ' \
-    GPRINT:b554avg:AVERAGE:"Avg %5.2lf %s   " \
-    GPRINT:b554min:MIN:"Min %5.2lf %s   " \
-    GPRINT:b554max:MAX:"Max %5.2lf %s" \
-    GPRINT:b554last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b562avg#FF8000:'562 MHz      ' \
-    GPRINT:b562avg:AVERAGE:"Avg %5.2lf %s   " \
-    GPRINT:b562min:MIN:"Min %5.2lf %s   " \
-    GPRINT:b562max:MAX:"Max %5.2lf %s" \
-    GPRINT:b562last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b570avg#FFBF00:'570 MHz      ' \
-    GPRINT:b570avg:AVERAGE:"Avg %5.2lf %s   " \
-    GPRINT:b570min:MIN:"Min %5.2lf %s   " \
-    GPRINT:b570max:MAX:"Max %5.2lf %s" \
-    GPRINT:b570last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b578avg#FFFF00:'578 MHz      ' \
-    GPRINT:b578avg:AVERAGE:"Avg %5.2lf %s   " \
-    GPRINT:b578min:MIN:"Min %5.2lf %s   " \
-    GPRINT:b578max:MAX:"Max %5.2lf %s" \
-    GPRINT:b578last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b586avg#BFFF00:'586 MHz      ' \
-    GPRINT:b586avg:AVERAGE:"Avg %5.2lf %s   " \
-    GPRINT:b586min:MIN:"Min %5.2lf %s   " \
-    GPRINT:b586max:MAX:"Max %5.2lf %s" \
-    GPRINT:b586last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b594avg#80FF00:'594 MHz      ' \
-    GPRINT:b594avg:AVERAGE:"Avg %5.2lf %s   " \
-    GPRINT:b594min:MIN:"Min %5.2lf %s   " \
-    GPRINT:b594max:MAX:"Max %5.2lf %s" \
-    GPRINT:b594last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b602avg#40FF00:'602 MHz      ' \
+    COMMENT:"QAM 256 (Σ 742.55 Mbit/s)\n" \
+    AREA:b138avg#FF0000:"138 MHz      " \
+    GPRINT:b138avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b138min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b138max:MAX:"Max %5.2lf %s" \
+    GPRINT:b138last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b146avg#FF2F00:"146 MHz      " \
+    GPRINT:b146avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b146min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b146max:MAX:"Max %5.2lf %s" \
+    GPRINT:b146last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b154avg#FF5E00:"154 MHz      " \
+    GPRINT:b154avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b154min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b154max:MAX:"Max %5.2lf %s" \
+    GPRINT:b154last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b162avg#FF8D00:"162 MHz      " \
+    GPRINT:b162avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b162min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b162max:MAX:"Max %5.2lf %s" \
+    GPRINT:b162last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b602avg#FFBD00:"602 MHz      " \
     GPRINT:b602avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b602min:MIN:"Min %5.2lf %s   " \
     GPRINT:b602max:MAX:"Max %5.2lf %s" \
     GPRINT:b602last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b666avg#00FF00:'666 MHz      ' \
+    STACK:b618avg#FFEC00:"618 MHz      " \
+    GPRINT:b618avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b618min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b618max:MAX:"Max %5.2lf %s" \
+    GPRINT:b618last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b626avg#E2FF00:"626 MHz      " \
+    GPRINT:b626avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b626min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b626max:MAX:"Max %5.2lf %s" \
+    GPRINT:b626last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b642avg#B2FF00:"642 MHz      " \
+    GPRINT:b642avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b642min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b642max:MAX:"Max %5.2lf %s" \
+    GPRINT:b642last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b650avg#83FF00:"650 MHz      " \
+    GPRINT:b650avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b650min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b650max:MAX:"Max %5.2lf %s" \
+    GPRINT:b650last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b658avg#54FF00:"658 MHz      " \
+    GPRINT:b658avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b658min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b658max:MAX:"Max %5.2lf %s" \
+    GPRINT:b658last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b666avg#25FF00:"666 MHz      " \
     GPRINT:b666avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b666min:MIN:"Min %5.2lf %s   " \
     GPRINT:b666max:MAX:"Max %5.2lf %s" \
     GPRINT:b666last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b674avg#00FF40:'674 MHz      ' \
+    STACK:b674avg#00FF0A:"674 MHz      " \
     GPRINT:b674avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b674min:MIN:"Min %5.2lf %s   " \
     GPRINT:b674max:MAX:"Max %5.2lf %s" \
     GPRINT:b674last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b682avg#00FF80:'682 MHz      ' \
+    STACK:b682avg#00FF39:"682 MHz      " \
     GPRINT:b682avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b682min:MIN:"Min %5.2lf %s   " \
     GPRINT:b682max:MAX:"Max %5.2lf %s" \
     GPRINT:b682last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b690avg#00FFBF:'690 MHz      ' \
+    STACK:b690avg#00FF68:"690 MHz      " \
     GPRINT:b690avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b690min:MIN:"Min %5.2lf %s   " \
     GPRINT:b690max:MAX:"Max %5.2lf %s" \
     GPRINT:b690last:LAST:"  Last %5.2lf %s\n" \
     COMMENT:" \n" \
-    COMMENT:"QAM 64 (Σ 500.544 Mbit/s)\n" \
-    STACK:b698avg#00FFFF:'698 MHz      ' \
+    COMMENT:"QAM 64 (Σ 716.03 Mbit/s)\n" \
+    STACK:b698avg#00FF98:"698 MHz      " \
     GPRINT:b698avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b698min:MIN:"Min %5.2lf %s   " \
     GPRINT:b698max:MAX:"Max %5.2lf %s" \
     GPRINT:b698last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b706avg#00BFFF:'706 MHz      ' \
+    STACK:b706avg#00FFC7:"706 MHz      " \
     GPRINT:b706avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b706min:MIN:"Min %5.2lf %s   " \
     GPRINT:b706max:MAX:"Max %5.2lf %s" \
     GPRINT:b706last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b714avg#0080FF:'714 MHz      ' \
+    STACK:b714avg#00FFF6:"714 MHz      " \
     GPRINT:b714avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b714min:MIN:"Min %5.2lf %s   " \
     GPRINT:b714max:MAX:"Max %5.2lf %s" \
     GPRINT:b714last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b722avg#0040FF:'722 MHz      ' \
+    STACK:b722avg#00D8FF:"722 MHz      " \
     GPRINT:b722avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b722min:MIN:"Min %5.2lf %s   " \
     GPRINT:b722max:MAX:"Max %5.2lf %s" \
     GPRINT:b722last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b762avg#0000FF:'762 MHz      ' \
+    STACK:b730avg#00A8FF:"730 MHz      " \
+    GPRINT:b730avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b730min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b730max:MAX:"Max %5.2lf %s" \
+    GPRINT:b730last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b738avg#0079FF:"738 MHz      " \
+    GPRINT:b738avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b738min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b738max:MAX:"Max %5.2lf %s" \
+    GPRINT:b738last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b746avg#004AFF:"746 MHz      " \
+    GPRINT:b746avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b746min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b746max:MAX:"Max %5.2lf %s" \
+    GPRINT:b746last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b754avg#001AFF:"754 MHz      " \
+    GPRINT:b754avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b754min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b754max:MAX:"Max %5.2lf %s" \
+    GPRINT:b754last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b762avg#1400FF:"762 MHz      " \
     GPRINT:b762avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b762min:MIN:"Min %5.2lf %s   " \
     GPRINT:b762max:MAX:"Max %5.2lf %s" \
     GPRINT:b762last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b770avg#4000FF:'770 MHz      ' \
+    STACK:b770avg#4300FF:"770 MHz      " \
     GPRINT:b770avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b770min:MIN:"Min %5.2lf %s   " \
     GPRINT:b770max:MAX:"Max %5.2lf %s" \
     GPRINT:b770last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b778avg#8000FF:'778 MHz      ' \
+    STACK:b778avg#7200FF:"778 MHz      " \
     GPRINT:b778avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b778min:MIN:"Min %5.2lf %s   " \
     GPRINT:b778max:MAX:"Max %5.2lf %s" \
     GPRINT:b778last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b786avg#BF00FF:'786 MHz      ' \
+    STACK:b786avg#A200FF:"786 MHz      " \
     GPRINT:b786avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b786min:MIN:"Min %5.2lf %s   " \
     GPRINT:b786max:MAX:"Max %5.2lf %s" \
     GPRINT:b786last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b794avg#FF00FF:'794 MHz      ' \
+    STACK:b794avg#D100FF:"794 MHz      " \
     GPRINT:b794avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b794min:MIN:"Min %5.2lf %s   " \
     GPRINT:b794max:MAX:"Max %5.2lf %s" \
     GPRINT:b794last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b802avg#FF00BF:'802 MHz      ' \
+    STACK:b802avg#FF00FD:"802 MHz      " \
     GPRINT:b802avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b802min:MIN:"Min %5.2lf %s   " \
     GPRINT:b802max:MAX:"Max %5.2lf %s" \
     GPRINT:b802last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b810avg#FF0080:'810 MHz      ' \
+    STACK:b810avg#FF00CD:"810 MHz      " \
     GPRINT:b810avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b810min:MIN:"Min %5.2lf %s   " \
     GPRINT:b810max:MAX:"Max %5.2lf %s" \
     GPRINT:b810last:LAST:"  Last %5.2lf %s\n" \
-    STACK:b818avg#FF0040:'818 MHz      ' \
+    STACK:b818avg#FF009E:"818 MHz      " \
     GPRINT:b818avg:AVERAGE:"Avg %5.2lf %s   " \
     GPRINT:b818min:MIN:"Min %5.2lf %s   " \
     GPRINT:b818max:MAX:"Max %5.2lf %s" \
     GPRINT:b818last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b826avg#FF006F:"826 MHz      " \
+    GPRINT:b826avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b826min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b826max:MAX:"Max %5.2lf %s" \
+    GPRINT:b826last:LAST:"  Last %5.2lf %s\n" \
+    STACK:b834avg#FF0040:"834 MHz      " \
+    GPRINT:b834avg:AVERAGE:"Avg %5.2lf %s   " \
+    GPRINT:b834min:MIN:"Min %5.2lf %s   " \
+    GPRINT:b834max:MAX:"Max %5.2lf %s" \
+    GPRINT:b834last:LAST:"  Last %5.2lf %s\n" \
     COMMENT:" \n" \
     COMMENT:"Overall Channel Statistics\n" \
     GPRINT:bavg:AVERAGE:"                 Avg %5.2lf %s" \
@@ -248,7 +320,6 @@ for i in $TIMES; do
     GPRINT:bmax:MAX:"   Max %5.2lf %s" \
     GPRINT:blast:LAST:"  Last %5.2lf %s\n" \
     COMMENT:" \n" \
-    HRULE:1167936000#000000:'Overall capacity (1167.936 Mbit/s)':dashes=5 \
+    HRULE:1529440000#000000:'Overall capacity (1458.58 Mbit/s)':dashes=5 \
     LINE1:bmax#5f5f5f:"Peak-Bandwidth"
-    echo ""
 done

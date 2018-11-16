@@ -25,5 +25,5 @@ Start collecting data by adding the following line to your crontab:
 You can generate the graph by executing the final script:
 
 ```
-./gen-graphs.sh
+./gen_graphs.sh
 ```
